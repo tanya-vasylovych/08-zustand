@@ -26,7 +26,9 @@ const NoteForm = () => {
     mutation.mutate(values);
   };
   const handleChange = (
-    e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
+    e: React.ChangeEvent<
+      HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement
+    >
   ) => {
     setDraft({
       ...draft,
@@ -50,11 +52,10 @@ const NoteForm = () => {
 
       <label className={css.formGroup} htmlFor="content">
         Content
-        <input
+        <textarea
           onChange={handleChange}
           value={draft.content}
           name="content"
-          type="text"
           className={css.textarea}
         />
       </label>
@@ -75,7 +76,11 @@ const NoteForm = () => {
         </select>
       </label>
 
-      <button type="button" className={css.cancelButton}>
+      <button
+        onClick={() => router.back()}
+        type="button"
+        className={css.cancelButton}
+      >
         Cancel
       </button>
       <button type="submit" className={css.submitButton}>

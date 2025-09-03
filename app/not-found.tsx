@@ -1,9 +1,8 @@
 import css from "./page.module.css";
-
-export const metadata = {
+import type { Metadata } from "next";
+export const metadata: Metadata = {
   title: "404 - Page not found",
   description: "Sorry, the page you are looking for does not exist.",
-  url: "https://08-zustand.vercel.app/",
   openGraph: {
     title: "404 - Page not found",
     description: "Sorry, the page you are looking for does not exist.",
